@@ -180,6 +180,15 @@ DOTTED="⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⡐⠆⢡⣸⣷⣾⣿⣶
 ⠋⡑⠞⠓⠀⠐⠂⠀⢄⠀⠀⣀⠀⢐⢣⠥⠤⠖⠲⠂⠀⠀⠀⠈⠉⠉⠁⠁⠀⠀⠀⠀⠀⠀⠠⠠⠐⠋⠁⠂⠀⢀⡀⠄⠀⠐⠀⠀⠀⠘
 ⢅⡀⠉⠈⢌⠖⡂⠰⠚⢙⡲⠤⠜⡙⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⢀⠄⡀⠀⠀⠐⠀⡐⠤⠀⠂⠀⠀⠆⡀"
 
+HELP="USAGE: bassem [options]
+display bassem
+
+  --colored  display colored version of bassem
+  --classic  display classic version of bassem
+  --dotted   display dotted version of  bassem
+  --help     display help
+"
+
 if [[ $# -eq 0 ]]; then
 echo "$INVERTED"
 exit 0
@@ -195,7 +204,14 @@ echo "$CLASSIC"
 exit 0
 fi
 
-if [[ $# -eq "--dotted" ]]; then
+if [[ $1 == "--dotted" ]]; then
 echo "$DOTTED"
 exit 0
 fi
+
+if [[ $1 == "--help" ]]; then
+echo "$HELP"
+exit 0
+fi
+
+echo "$HELP"
